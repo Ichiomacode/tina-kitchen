@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Dishes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+            /* Center align the content */
+        }
+
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center align the content */
+            padding: 20px;
+        }
+
+        .dish {
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .dish img {
+            width: 100%;
+            height: 200px;
+            /* Set a fixed height for the images */
+            object-fit: cover;
+            /* Maintain aspect ratio while covering the container */
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background-color: rgb(204, 133, 2);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            /* Remove underline */
+        }
+
+        .add-to-cart:hover {
+            background-color: rgb(204, 133, 2);
+        }
+
+        .added-to-cart {
+            background-color: rgb(204, 133, 2);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .added-to-cart:hover {
+            background-color: rgb(204, 133, 2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Varieties of Local Dishes</h1>
+    </header>
+
+    <section>
+        <div class="dish">
+            <img src="./images/amala and ewedu.jpg" alt="Amala and Ewedu">
+            <h3>Amala and Ewedu</h3>
+            <p>A traditional Yoruba dish consisting of Amala (yam flour) served with Ewedu soup.</p>
+            <button id="AmalaAndEwedu" class="add-to-cart" onclick="addToCart('Amala and Ewedu', 10.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/punded yam.jpg" alt="Pounded Yam">
+            <h3>Pounded Yam</h3>
+            <p>A delicious dish made by boiling yams and then pounding until smooth, usually served with a variety of
+                soups.</p>
+            <button id="PoundedYam" class="add-to-cart" onclick="addToCart('Pounded Yam', 12.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/Half-Catfish-Pepper-Soup.jpg" alt="Catfish Peppersoup">
+            <h3>Catfish Peppersoup</h3>
+            <p>A spicy symphony of flavors with catfish, aromatic broth, and Nigerian culinary artistry.</p>
+            <button id="CatfishPeppersoup" class="add-to-cart" onclick="addToCart('Catfish Peppersoup', 14.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/Jollof_Rice_with_Stew.jpg" alt="Jollof Rice">
+            <h3>Jollof Rice</h3>
+            <p>A popular West African dish made with rice, tomatoes, and a blend of flavorful spices.</p>
+            <button id="JollofRice" class="add-to-cart" onclick="addToCart('Jollof Rice', 8.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/EFO-RIRO-500x500.jpg" alt="Eforiro">
+            <h3>Eforiro</h3>
+            <p>A delicious Nigerian spinach stew made with a variety of vegetables and often served with rice or fufu.
+            </p>
+            <button id="Eforiro" class="add-to-cart" onclick="addToCart('Eforiro', 11.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/moimoi-3-939x598.jpg" alt="Moi Moi">
+            <h3>Moi Moi</h3>
+            <p>A steamed bean pudding made from grounded peeled beans, onions, and other spices.</p>
+            <button id="MoiMoi" class="add-to-cart" onclick="addToCart('Moi Moi', 9.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/nigerian-suya-32.jpg" alt="Suya">
+            <h3>Suya</h3>
+            <p>A popular Nigerian street food made with thinly sliced spicy grilled meat.</p>
+            <button id="Suya" class="add-to-cart" onclick="addToCart('Suya', 13.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/akara.jpg" alt="Akara">
+            <h3>Akara</h3>
+            <p>Deep-fried bean cakes made from black-eyed peas, onions, and spices.</p>
+            <button id="Akara" class="add-to-cart" onclick="addToCart('Akara', 7.99)">Add to Cart</button>
+        </div>
+
+        <div class="dish">
+            <img src="./images/Ofada-stew-2.jpg" alt="Ofada Rice">
+            <h3>Ofada Rice</h3>
+            <p>A variety of rice grown in Nigeria, often served with a special pepper sauce and assorted meats.</p>
+            <button id="OfadaRice" class="add-to-cart" onclick="addToCart('Ofada Rice', 10.99)">Add to Cart</button>
+        </div>
+    </section>
+    <section><a href="index.html" class="added-to-cart" style="margin: 20px;">Go Back to Home</a></section>
+
+    <script>
+        function addToCart(itemName, itemPrice) {
+            var cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name: itemName, price: itemPrice });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            var addButton = document.getElementById(itemName.replace(/\s+/g, ''));
+            addButton.innerText = "Added to Cart";
+            addButton.classList.add("added-to-cart");
+            addButton.disabled = true;
+        }
+    </script>
+
+</body>
+
+</html>
